@@ -1,0 +1,22 @@
+
+
+/* src/components/FeatureList/FeatureList.css */
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-item {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.check-icon {
+  color: #4a90e2;
+  font-weight: bold;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
