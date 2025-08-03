@@ -146,6 +146,7 @@ const AboutSection = () => {
   const totalSlides = Math.ceil(reviews.length / visibleCards);
 
   return (
+    
     <section id="sobre" className="about-section">
       <div className="about-container">
         <div className="about-header">
@@ -274,10 +275,9 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-        
-        <div className="landscape-image-container">
-          <img src="/img/Foto Paisagem.jpg" alt="Paisagem" className="landscape-image"/>
-        </div>
+      </div>
+      <div className="landscape-image-container">
+        <img src="/img/Foto Paisagem.jpg" alt="Paisagem" className="landscape-image"/>
       </div>
     </section>
   );
