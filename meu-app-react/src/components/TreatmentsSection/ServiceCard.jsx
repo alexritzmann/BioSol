@@ -6,7 +6,7 @@ import React from 'react';
 const ServiceCard = ({ title, subtitle, description }) => {
   return (
     <div className="service-card">
-      <h4>{title}</h4>
+      <h1 className='service-title'>{title}</h1>
       <p className="service-subtitle">{subtitle}</p>
       <p className="service-description">{description}</p>
     </div>
@@ -14,3 +14,4 @@ const ServiceCard = ({ title, subtitle, description }) => {
 };
 
 export default ServiceCard;
+

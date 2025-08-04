@@ -51,19 +51,19 @@ const TreatmentsSection = () => {
 
   const services = [
     {
-      title: 'Avaliação Completa',
-      subtitle: 'Diagnóstico preciso',
-      description: 'Processo detalhado de avaliação para identificar necessidades específicas.'
+      title: '01.',
+      subtitle: 'Consulta',
+      description: 'A consulta servirá de guia para o seu tratamento. É nessa etapa que vamos decidir juntos se o seu problema se adequa para tratamento através da hipnose.'
     },
     {
-      title: 'Acompanhamento Contínuo',
-      subtitle: 'Suporte permanente',
-      description: 'Sessões regulares para monitoramento do desenvolvimento e progresso.'
+      title: '02.',
+      subtitle: 'Terapia',
+      description: 'Com base nas informações levantadas na consulta, o tratamento se inicia. Duração em torno de 60min até 2 horas'
     },
     {
-      title: 'Atendimento Familiar',
-      subtitle: 'Suporte integrado',
-      description: 'Orientação e apoio para familiares e cuidadores.'
+      title: '03.',
+      subtitle: 'Retorno',
+      description: 'Duração em torno de 50min até 1h e 30mins'
     }
   ];
 
@@ -104,8 +104,8 @@ const TreatmentsSection = () => {
         
         <div className="services-section">
           <h3 className="services-title">Nossa Metodologia de Trabalho</h3>
-          <p className="services-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-          
+          <p className="services-subtitle">É feito em média de três sessões que são divididas da seguinte maneira:</p>
+          <p className="highlighted">__________</p>
           <div className="services-cards">
             {services.map((service, index) => (
               <ServiceCard 

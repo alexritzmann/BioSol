@@ -1,10 +1,4 @@
-
-
 import './HeroSection.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons'; 
-import { faRectangleList } from '@fortawesome/free-solid-svg-icons'; 
-
 
 const HeroSection = () => {
   return (
@@ -17,7 +11,6 @@ const HeroSection = () => {
           </div>
           
           <div className="bottom-text">
-            <p className="highlighted">__________</p>
             <button className="whatsapp-button">
               Fale conosco via WhatsApp
             </button>
@@ -28,16 +21,18 @@ const HeroSection = () => {
           <img src="/img/Giih Linda.jpg" alt="Profissional" className="portrait-image"/>
         </div>
       </div>
-      <div className='element-divider'>
-        <span className='terapeut-title'>
-          <div><FontAwesomeIcon icon={faUser} /></div>
-          <div>Simone Tauchert</div>
-          <div style={{marginLeft: '20px'}}><FontAwesomeIcon icon={faRectangleList} /></div>
-          <div>Terapeuta | Medicina chinesa | Ressonância frequencial</div>
-        </span>
-        
+      
+      <div className="professional-info">
+        <div className="info-item">
+          <span className="icon">👤</span>
+          <span>Simone Tauchert</span>
+        </div>
+        <div className="divider"></div>
+        <div className="info-item">
+          <span className="icon">📋</span>
+          <span>Terapeuta | Medicina chinesa | Ressonância frequencial</span>
+        </div>
       </div>
-
     </section>
   );
 };
