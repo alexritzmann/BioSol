@@ -1,67 +1,54 @@
-/* ========== ESTILOS GERAIS ========== */
 .about-section {
   background-color: #fff;
-  padding-top: 40px;
-  margin-bottom: 0;
+  padding: 60px 0 0;
 }
 
 .about-container {
-  max-width: 85%;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0 20px;
 }
 
 .about-header {
   text-align: center;
   margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
 }
 
 .about-logo {
-  width: 350px;
+  width: 300px;
+  max-width: 80%;
   margin-bottom: 20px;
 }
 
 .about-description {
-  margin-top: 20px;
   font-size: 1.2rem;
   color: #555;
   max-width: 800px;
+  margin: 0 auto;
   line-height: 1.6;
-  text-align: center;
 }
 
 .landscape-image-container {
-  width: 100vw; /* Ocupa toda a largura da viewport */
-  position: relative;
-  left: 50%; /* Centraliza o container */
-  right: 50%; /* Centraliza o container */
-  margin-left: -50vw; /* Compensa o posicionamento */
-  margin-right: -50vw; /* Compensa o posicionamento */
-  margin-top: 20px;
-  overflow: hidden;
+  width: 100%;
+  margin-top: 40px;
 }
 
 .landscape-image {
   width: 100%;
-  display: block;
+  height: auto;
+  max-height: 700px;
   object-fit: cover;
-  height: 800px;
+  display: block;
 }
 
-/* ========== ESTILOS DO CARROSSEL ========== */
+/* Carousel Styles */
 .ti-reviews-container {
   position: relative;
   overflow: hidden;
   padding: 0 50px;
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
 }
 
 .ti-reviews-container-wrapper {
@@ -74,16 +61,22 @@
 }
 
 .ti-review-group {
-  display: flex;
   flex-shrink: 0;
-  width: 100%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px;
   box-sizing: border-box;
 }
 
 .ti-review-item {
-  flex-shrink: 0;
-  box-sizing: border-box;
-  padding: 0 15px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  min-height: 200px;
+  max-height: auto;
+  margin-bottom: 50px;
 }
 
 .ti-controls {
@@ -126,19 +119,20 @@
   pointer-events: none;
 }
 
-/* Estilo dos cards */
-.ti-review-item .ti-inner {
+/* Card Styles */
+.ti-inner {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease;
-  height: auto;
 }
 
-.ti-review-item .ti-inner:hover {
+.ti-inner:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .ti-review-header {
@@ -148,11 +142,11 @@
 }
 
 .ti-profile-img {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 12px;
+  margin-right: 12px;
   flex-shrink: 0;
 }
 
@@ -168,12 +162,12 @@
 
 .ti-name {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   color: #333;
 }
 
 .ti-date {
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
 }
 
@@ -184,10 +178,11 @@
 }
 
 .ti-review-content {
-  overflow: hidden;
   font-size: 14px;
   line-height: 1.6;
   color: #444;
+  flex-grow: 1;
+  overflow: hidden;
   transition: height 0.3s ease;
 }
 
@@ -196,7 +191,7 @@
   border: none;
   color: #1a73e8;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
   padding: 8px 0;
   margin-top: 10px;
   text-align: left;
@@ -208,11 +203,9 @@
   text-decoration: underline;
 }
 
-/* ========== RESPONSIVIDADE ========== */
 @media (max-width: 1024px) {
-  .about-description {
-    font-size: 1.1rem;
-    max-width: 90%;
+  .ti-review-item {
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
@@ -220,28 +213,19 @@
   .ti-controls {
     top: auto;
     bottom: -50px;
-    transform: none;
   }
-
+  
   .about-logo {
     width: 250px;
   }
-
-  .landscape-image-container {
-    height: 300px;
-  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .ti-reviews-container {
-    padding: 0 30px;
+    padding: 0 20px;
   }
-
-  .about-header {
-    margin-bottom: 30px;
-  }
-
-  .about-description {
-    font-size: 1rem;
+  
+  .ti-review-item {
+    flex: 1 1 100%;
   }
 }

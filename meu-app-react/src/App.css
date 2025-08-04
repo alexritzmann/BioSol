@@ -3,3 +3,13 @@
 :root {
   background-color: #F8F9FA;
 }
+
+.App {
+  background-color: #F8F9FA;
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 100vw;
+  overflow-x: hidden;
+}

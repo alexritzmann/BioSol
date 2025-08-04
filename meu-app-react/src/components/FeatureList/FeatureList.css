@@ -1,9 +1,7 @@
-
-
-/* src/components/FeatureList/FeatureList.css */
 .feature-list {
   list-style: none;
   padding: 0;
+  margin: 20px 0;
 }
 
 .feature-item {
@@ -12,11 +10,16 @@
   align-items: flex-start;
   font-size: 1.1rem;
   color: #444;
+  padding-left: 10px;
+  position: relative;
 }
 
-.check-icon {
+.feature-item::before {
+  content: '✓';
   color: #4a90e2;
   font-weight: bold;
   margin-right: 15px;
   font-size: 1.2rem;
+  position: absolute;
+  left: -15px;
 }

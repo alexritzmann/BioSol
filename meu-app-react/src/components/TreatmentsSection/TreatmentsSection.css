@@ -1,78 +1,73 @@
-
-
-#tratamentos{
-    background-color: #F8F9FA;
-    margin-top: 0;
-    border: red solid 5px;
+.treatments-section {
+  background-color: #fff;
+  padding: 50px 0;
 }
 
-.treatments-section{
-    background-color: #fff;
-    padding: 50px 0;
+.treatments-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.treatments-container{
-    max-width: 85%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
-.section-header{
-    text-align: center;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
+.section-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.section-header h2{
-    font-size: 2.5rem;
-    margin-top: 20px;
-    margin-bottom: 0;
+.subtitle {
+  font-size: 1.2rem;
+  color: #3B7CC0;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.subtitle{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    color: #3B7CC0;
-    font-weight: bold;
+.highlighted-line {
+  width: 50px;
+  height: 3px;
+  background-color: #3B7CC0;
+  margin: 0 auto;
 }
 
-.section-header .highlighted{
-    margin-top: 0;
-    color: #3B7CC0;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.treatment-cards-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 85%;
+.treatment-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .treatment-card {
   background: #ffffff;
   border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
+  padding: 25px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.2), 0 8px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .treatment-card:hover {
-  box-shadow: 0 0 30px rgba(12, 26, 226, 0.452);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(12, 26, 226, 0.15);
 }
 
 .icon-container {
   margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
 }
 
 .treatment-icon {
@@ -92,116 +87,122 @@
   line-height: 1.6;
 }
 
-.treatment-details{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Distribui o espaço igualmente */
-    align-items: center; /* Centraliza verticalmente */
-    width: 100%;
-    max-width: 1200px; /* Largura máxima */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    gap: 40px; /* Espaçamento entre as colunas */
+.treatment-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  margin: 40px 0;
 }
 
-.portrait-column{
-    flex: 1; /* Ocupa 50% do espaço */
-    display: flex;
-    justify-content: flex-end; /* Alinha a imagem à direita */
+.portrait-column, .features-column {
+  flex: 1;
+  min-width: 300px;
 }
 
-.details-portrait{
-    width: 100%;
-    margin-left: 10px;
-    flex: 1;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.details-portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.features-column{
-    flex: 1; /* Ocupa 50% do espaço */
-    padding: 20px;
+.features-column {
+  display: flex;
+  flex-direction: column;
 }
 
-.appointment-button{
-    background-color: #4a90e2;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.features-column h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.services-section{
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
+.appointment-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
 }
 
-.services-subtitle{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 1.4rem;
-    color: #3B7CC0;
-    font-weight: bold;
+.appointment-button:hover {
+  background-color: #3b7cc0;
 }
 
-.services-section h3{
-    font-size: 2.5rem;
-    margin-top: 20px;
-    margin-bottom: 0;
+.services-section {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
 }
 
-.services-section .highlighted{
-    margin-top: 0;
-    padding: 0;
-    color: #3B7CC0;
-    font-size: 1.5rem;
-    font-weight: bold;
+.services-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.services-cards{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.services-subtitle {
+  font-size: 1.2rem;
+  color: #3B7CC0;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
-/*
+
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
 .service-card {
   background: #ffffff;
   border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
+  padding: 30px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.2), 0 8px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  flex: 1 1 300px;
+  max-width: 350px;
 }
 
 .service-card:hover {
-  box-shadow: 0 0 30px rgba(12, 26, 226, 0.452);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(12, 26, 226, 0.15);
 }
 
-.service-title{
-    margin: 0;
-    text-align: left;
-    font-size: 4em;
-    color: #3B7CC0;
-    font-weight: bold;
+.service-title {
+  font-size: 3rem;
+  color: #3B7CC0;
+  font-weight: 700;
+  margin: 0;
 }
 
-.service-subtitle{
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.4rem;
-    font-weight: bold;
+.service-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 10px 0;
 }
 
-.service-description{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 0.8rem;
-}*/
+.service-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .treatment-details {
+    flex-direction: column;
+  }
+  
+  .appointment-button {
+    align-self: center;
+  }
+}

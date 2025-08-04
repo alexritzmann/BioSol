@@ -71,13 +71,12 @@ const AboutSection = () => {
   ], []);
 
   useEffect(() => {
-  // Medir as alturas dos conteúdos após renderização
     const newHeights = {};
     reviews.forEach((_, index) => {
       if (contentRefs.current[index]) {
         const element = contentRefs.current[index];
         newHeights[index] = {
-          initial: 95, // Altura inicial fixa
+          initial: 95,
           expanded: element.scrollHeight
         };
       }
@@ -111,10 +110,8 @@ const AboutSection = () => {
     }));
   };
 
-
   const nextSlide = () => {
     setCurrentSlide(prev => {
-      // Calcula o novo índice garantindo que não ultrapasse o final
       const newIndex = prev + 1;
       const maxIndex = Math.ceil(reviews.length / visibleCards) - 1;
       return newIndex > maxIndex ? maxIndex : newIndex;
@@ -122,31 +119,22 @@ const AboutSection = () => {
   };
 
   const prevSlide = () => {
-    setCurrentSlide(prev => {
-      // Calcula o novo índice garantindo que não vá abaixo de zero
-      const newIndex = prev - 1;
-      return newIndex < 0 ? 0 : newIndex;
-    });
+    setCurrentSlide(prev => (prev > 0 ? prev - 1 : 0));
   };
-
-  // Ajustar altura dos textos expandidos
-  useEffect(() => {
-    reviews.forEach((review, index) => {
-      const contentElement = document.querySelector(`.review-content-${index}`);
-      if (contentElement) {
-        const height = expandedReviews[index] 
-          ? review.expandedHeight 
-          : review.initialHeight;
-        contentElement.style.height = `${height}px`;
-      }
-    });
-  }, [expandedReviews, reviews]);
 
   // Calcula o total de slides
   const totalSlides = Math.ceil(reviews.length / visibleCards);
+  
+  // Cria grupos de reviews para cada slide
+  const reviewGroups = useMemo(() => {
+    const groups = [];
+    for (let i = 0; i < reviews.length; i += visibleCards) {
+      groups.push(reviews.slice(i, i + visibleCards));
+    }
+    return groups;
+  }, [reviews, visibleCards]);
 
   return (
-    
     <section id="sobre" className="about-section">
       <div className="about-container">
         <div className="about-header">
@@ -190,13 +178,13 @@ const AboutSection = () => {
                       width: `${totalSlides * 100}%`
                     }}
                   >
-                    {Array(totalSlides).fill().map((_, groupIndex) => (
+                    {reviewGroups.map((group, groupIndex) => (
                       <div 
                         key={groupIndex}
                         className="ti-review-group"
                         style={{ width: `${100 / totalSlides}%` }}
                       >
-                        {reviews.slice(groupIndex * visibleCards, (groupIndex * visibleCards) + visibleCards).map((review, indexInGroup) => {
+                        {group.map((review, indexInGroup) => {
                           const originalIndex = groupIndex * visibleCards + indexInGroup;
                           const heightInfo = contentHeights[originalIndex] || { initial: 100, expanded: 0 };
                           
@@ -204,7 +192,6 @@ const AboutSection = () => {
                             <div 
                               key={originalIndex}
                               className="ti-review-item"
-                              style={{ width: `${100 / visibleCards}%` }}
                             >
                               <div className="ti-inner">
                                 <div className="ti-review-header">

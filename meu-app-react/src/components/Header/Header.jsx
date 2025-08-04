@@ -1,8 +1,12 @@
 
+import { useState } from 'react';
 
 import './Header.css';
 
+
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="header-container">
@@ -10,12 +14,18 @@ const Header = () => {
           <img src="/img/Logo_Completa-removebg-preview.png" alt="Logo" />
         </div>
         
-        <nav className="navigation">
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        
+        <nav className={`navigation ${menuOpen ? 'open' : ''}`}>
           <ul>
-            <a href="#sobre">Sobre</a>
-            <a href="#tratamentos">Tratamentos</a>
-            <a href="#faq">Perguntas Frequentes</a>
-            <a href="#contato">Contato</a>
+            <li><a href="#sobre" onClick={() => setMenuOpen(false)}>Sobre</a></li>
+            <li><a href="#tratamentos" onClick={() => setMenuOpen(false)}>Tratamentos</a></li>
+            <li><a href="#faq" onClick={() => setMenuOpen(false)}>Perguntas Frequentes</a></li>
+            <li><a href="#contato" onClick={() => setMenuOpen(false)}>Contato</a></li>
           </ul>
         </nav>
         
@@ -28,4 +38,3 @@ const Header = () => {
 };
 
 export default Header;
-

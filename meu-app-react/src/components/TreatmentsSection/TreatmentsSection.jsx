@@ -68,58 +68,59 @@ const TreatmentsSection = () => {
   ];
 
   return (
-    <section id="tratamentos" className="treatments-section">
-      <div className="treatments-container">
-        <div className="section-header">
-          <h2>Conheça nossos tratamentos</h2>
-          <p className="subtitle">A Hipnoterapia pode beneficiar qualquer pessoa que esteja sofrendo com  dores emocionais.</p>
-          <p className="highlighted">__________</p>
-        </div>
-        
-        <div className="treatment-cards-grid">
-          {treatments.map((treatment, index) => (
-            <div className="treatment-card" key={index}>
-              <div className="icon-container">
-                {treatment.icon}
-              </div>
-              <h3>{treatment.title}</h3>
-              <p>{treatment.description}</p>
+  <section id="tratamentos" className="treatments-section">
+    <div className="treatments-container">
+      <div className="section-header">
+        <h2>Conheça nossos tratamentos</h2>
+        <p className="subtitle">A Hipnoterapia pode beneficiar qualquer pessoa que esteja sofrendo com dores emocionais.</p>
+        <div className="highlighted-line"></div>
+      </div>
+      
+      <div className="treatment-cards-container">
+        {treatments.map((treatment, index) => (
+          <div className="treatment-card" key={index}>
+            <div className="icon-container">
+              {treatment.icon}
             </div>
-          ))}
+            <h3>{treatment.title}</h3>
+            <p>{treatment.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div className="treatment-details">
+        <div className="portrait-column">
+          <img src="/img/Giih Linda.jpg" alt="Profissional" className="details-portrait"/>
         </div>
         
-        <div className="treatment-details">
-          <div className="portrait-column">
-            <img src="/img/Giih Linda.jpg" alt="Profissional" className="details-portrait"/>
-          </div>
-          
-          <div className="features-column">
-            <h3>Por que escolher nossa abordagem?</h3>
-            <FeatureList />
-            <button className="appointment-button">
-              Agende sua consulta
-            </button>
-          </div>
-        </div>
-        
-        <div className="services-section">
-          <h3 className="services-title">Nossa Metodologia de Trabalho</h3>
-          <p className="services-subtitle">É feito em média de três sessões que são divididas da seguinte maneira:</p>
-          <p className="highlighted">__________</p>
-          <div className="services-cards">
-            {services.map((service, index) => (
-              <ServiceCard 
-                key={index}
-                title={service.title}
-                subtitle={service.subtitle}
-                description={service.description}
-              />
-            ))}
-          </div>
+        <div className="features-column">
+          <h3>Por que escolher nossa abordagem?</h3>
+          <FeatureList />
+          <button className="appointment-button">
+            Agende sua consulta
+          </button>
         </div>
       </div>
-    </section>
+      
+      <div className="services-section">
+        <h3 className="services-title">Nossa Metodologia de Trabalho</h3>
+        <p className="services-subtitle">É feito em média de três sessões que são divididas da seguinte maneira:</p>
+        <div className="highlighted-line"></div>
+        <div className="services-cards">
+          {services.map((service, index) => (
+            <ServiceCard 
+              key={index}
+              title={service.title}
+              subtitle={service.subtitle}
+              description={service.description}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
   );
 };
 
 export default TreatmentsSection;
+
