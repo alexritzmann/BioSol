@@ -1,5 +1,9 @@
 
+
 import { useState } from 'react';
+
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 import './Header.css';
 
@@ -14,11 +18,9 @@ const Header = () => {
           <img src="/img/Logo_Completa-removebg-preview.png" alt="Logo" />
         </div>
         
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <CloseIcon /> : <MenuIcon />}
+        </button>
         
         <nav className={`navigation ${menuOpen ? 'open' : ''}`}>
           <ul>
@@ -38,3 +40,4 @@ const Header = () => {
 };
 
 export default Header;
+
